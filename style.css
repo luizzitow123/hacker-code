@@ -1,0 +1,34 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+
+.code {
+width: 100%;
+height: 100%;
+color: rgb(0, 255, 0);
+font-family: monospace;
+}
+
+.typer::after {
+	content: "";
+	animation: whiter .5s infinite linear;
+}
+
+@keyframes whiter {
+	0% {
+		content: "";
+	}
+	50% {
+		content: "_";
+	}
+	100% {
+		content: "";
+	}
+}
