@@ -5,7 +5,7 @@ Seja um hacker digitando aleatoriamente
 `script.js` script principal <br>
 `style.css`: estilizador do HTML <br>
 `index.html`: arquivo principal do site <br>
-`util/script.txt`: script que vai ser o código que o client irá executar
+`util/script.txt`: script que vai ser o código que o client irá criar
 
 # Preview
 
