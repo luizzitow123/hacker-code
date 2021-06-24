@@ -1,34 +1,35 @@
 * {
-	padding: 0px;
-	margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 html, body {
-	width: 100%;
-	height: 100%;
-	background-color: black;
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
-.code {
-width: 100%;
-height: 100%;
-color: rgb(0, 255, 0);
-font-family: monospace;
+.editor {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    color: rgb(34, 255, 34);
+    font-family: monospace;
 }
 
-.typer::after {
-	content: "";
-	animation: whiter .5s infinite linear;
+.escrita::before {
+    content: "";
+    animation: writer .5s infinite linear;
 }
 
-@keyframes whiter {
-	0% {
-		content: "";
-	}
-	50% {
-		content: "_";
-	}
-	100% {
-		content: "";
-	}
+@keyframes writer {
+    0%{
+        content: "_";
+    }
+    50%{
+        content: "";
+    }
+    100%{
+        content: "_";
+    }
 }

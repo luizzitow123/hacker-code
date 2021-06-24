@@ -1,0 +1,36 @@
+var code; //variável code, armazena array
+var str = ""; //variável string, armazena string da array code;
+var i = 0; //variável i, armazena um número identificando o length dele.
+
+function Main() { //função Main
+    const whiter = document.querySelector('.code'); //pegar o elemento de classe code. (HTML)
+
+
+    const xhr = new XMLHttpRequest() //request
+    xhr.responseType = "text";//tipo da request: texto
+    xhr.open('GET', '/utils/script.txt'); //abrir request em um arquivo txt
+    xhr.send(); // enviar request
+    xhr.onload = function() { //dispara quando a resposta aparece.
+        code = this.response.split(''); // transformar em array e armazenar na váriavel code;
+    }
+    
+
+
+    document.addEventListener('keydown', (event) => { //dispara quando o client aperta uma tecla qualquer
+        if (event.key.toLowerCase() === "backspace" && i > 0 || typeof code[i] === "undefined") { //se ele precionar backspace e i for maior que zero OU code[i] for undefined (string);
+            let arr = str.split(''); //transformar em array
+            arr.pop();//tirar o último elemento
+            str = arr.join(''); //transformar em string
+            whiter.innerText = str;//Adicionar no elemento de classe .code (HTML)
+            i--; //diminuir (opcional)
+        }
+        if(!/up|down|doupn|left|right|backspace/ig.test(event.key)) { //se o client não pressionou esses botões
+            if (typeof code[i] === "undefined") return; // se code[i] for undefined faça nada
+            str += code[i]; //adiciona à array
+            whiter.innerText = str; //Adicionar no elemento de classe .code (HTML)
+            i++; //adicionar (obrigatório)
+        }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', Main); //evento que dispara depois de carregar a página
