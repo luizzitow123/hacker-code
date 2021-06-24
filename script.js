@@ -6,7 +6,7 @@ var i = 0;
 function Main() {
 	let writer = document.querySelector(".writer");
 	const xhr = new XMLHttpRequest();
-	xhr.open('GET', "https://typer-code.luisdos.repl.co/util/script.txt");
+	xhr.open('GET', "/util/script.txt");
 	xhr.responseType = "text";
 	xhr.send();
 	xhr.onload = function() {
@@ -25,7 +25,7 @@ function Main() {
 			i--;
 		}
 
-		if(!/up|down|left|right|backspace/ig.test(event.key) && typeof code[i] !== "undefined") {
+		if(!/up|down|left|right|backspace|ctrl|shift/ig.test(event.key) && typeof code[i] !== "undefined") {
 			str += code[i];
 			writer.innerText = str;
 			i++;
