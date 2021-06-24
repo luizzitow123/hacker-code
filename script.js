@@ -14,7 +14,8 @@ function Main() {
 	}
 
 	document.addEventListener('keydown', (event) => {
-		if(event.key.toLowerCase() === "backspace" && i < 0 || typeof code[i] === "undefined") {
+		console.log(event.key.toLowerCase() === "backspace");
+		if(event.key.toLowerCase() === "backspace" &&  typeof code[i] !== "undefined") {
 			let retirar = code[i];
 			let arr = str.split("");
 			arr.pop();
